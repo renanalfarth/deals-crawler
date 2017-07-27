@@ -21,12 +21,10 @@ app.use(bodyParser.raw({ limit: '50mb' }));
 
 app.options('*', cors());
 
-app.get('/promocoes', craw.gocraw);
-
-//craw.gocraw();
+app.get('/hardmob', craw.gocraw);
 
 app.listen(8888, function(){
 	console.log('#############################');
-	console.log('||||||||# CRAWLER #||||||||');
+	console.log('||||||||# DEALS CRAWLER #||||||||');
 	console.log('#############################');
 });
