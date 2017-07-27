@@ -1,0 +1,19 @@
+{
+  "name": "deals-crawler",
+  "version": "1.0.0",
+  "description": "Deals Crawler",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api",
+    "crawler",
+    "deals-crawler"
+  ],
+  "author": "Renan Alfarth <renan.fire12@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "request": "latest"
+  }
+}
