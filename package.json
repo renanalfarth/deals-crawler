@@ -15,6 +15,7 @@
   "author": "Renan Alfarth <renan.fire12@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "request": "latest"
+    "request": "latest",
+    "express": "latest"
   }
 }
