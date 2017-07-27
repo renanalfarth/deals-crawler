@@ -9,7 +9,6 @@ exports.gocraw = function (exp_req, exp_res) {
     headers: {
       'User-Agent': 'Midori',
     },
-    //form:{'email-login':'renan.fire12@gmail.com'}
     }, function(err, res) {
 
         var result = res.body;
