@@ -18,6 +18,7 @@
     "request": "latest",
     "express": "latest",
     "cheerio": "latest",
-    "body-parser":"latest"
+    "body-parser":"latest",
+    "cors":"latest"
   }
 }
