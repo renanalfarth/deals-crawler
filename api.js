@@ -23,7 +23,7 @@ app.options('*', cors());
 
 app.get('/hardmob', craw.gocraw);
 
-app.listen(8888, function(){
+app.listen(80, function(){
 	console.log('#############################');
 	console.log('||||||||# DEALS CRAWLER #||||||||');
 	console.log('#############################');
