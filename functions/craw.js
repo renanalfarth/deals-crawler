@@ -18,23 +18,23 @@ exports.gocraw = function (exp_req, exp_res) {
         $('#threads').filter(function() {
           var data = $(this);
 
-          var promotions = [];
-          promotions.push({pagina : 'Hardmob'});
+          var itens = [];
 
           $(data.children()).each(function(i, elem) {
 
-            promotions.push({
+            itens.push({
               titulo : $(this).children().children().find('.title').text(),
               link   : $(this).children().children().find('.title').attr('href')
             });
 
           });
 
+          var promotions = [];
+          promotions.push({pagina : 'Hardmob', itens: itens});
+
           exp_res.json(promotions);
 
         });
-
-
 
     });
 
