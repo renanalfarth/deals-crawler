@@ -1,4 +1,4 @@
-exports.gocraw = function (exp_req, exp_res) {
+exports.hardmob = function (exp_req, exp_res) {
 
   // HARDMOB
   request({
@@ -37,5 +37,35 @@ exports.gocraw = function (exp_req, exp_res) {
         });
 
     });
+
+};
+
+exports.weather = function(exp_req, exp_res) {
+
+  request({
+    url: 'http://api.openweathermap.org/data/2.5/forecast?q=Blumenau,BR&appid=519db8a2d6031cf367f700cbab038536&units=metric',
+    method: 'GET',
+    strictSSL: false,
+    encoding: 'ascii',
+    headers: {
+      'User-Agent': 'Midori',
+      'Content-Type': 'application/json'
+    },
+  }, function(err, res) {
+      var result = JSON.parse(res.body);
+
+      var weathers = [];
+
+      for(i=0;i<result.list.length;i++) {
+        weathers.push({
+          date    : result.list[i].dt_txt,
+          max     : result.list[i].main.temp_max,
+          min     : result.list[i].main.temp_min,
+          weather : result.list[i].weather[0]
+        });
+      }
+
+      exp_res.json(weathers);
+  });
 
 };

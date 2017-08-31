@@ -21,7 +21,8 @@ app.use(bodyParser.raw({ limit: '50mb' }));
 
 app.options('*', cors());
 
-app.get('/hardmob', cors({origin:'*'}), craw.gocraw);
+app.get('/hardmob', cors({origin:'*'}), craw.hardmob);
+app.get('/weather', cors({origin:'*'}), craw.weather);
 
 var port = process.env.PORT || 8888;
 
