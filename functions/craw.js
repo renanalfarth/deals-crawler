@@ -60,11 +60,16 @@ exports.weather = function(exp_req, exp_res) {
         var weathers = [];
 
         for(i=0;i<result.list.length;i++) {
+
+          console.log(result.list[i]);
+
           weathers.push({
-            date    : result.list[i].dt_txt,
-            max     : result.list[i].main.temp_max,
-            min     : result.list[i].main.temp_min,
-            weather : result.list[i].weather[0]
+            date        : result.list[i].dt_txt,
+            max         : result.list[i].main.temp_max,
+            min         : result.list[i].main.temp_min,
+            min         : result.list[i].main.temp_min,
+            icon        : result.list[i].weather[0].icon,
+            description : result.list[i].weather[0].description
           });
         }
       }
