@@ -54,6 +54,8 @@ exports.weather = function(exp_req, exp_res) {
   }, function(err, res) {
       var result = JSON.parse(res.body);
 
+      console.log(result);
+
       var weathers = [];
 
       for(i=0;i<result.list.length;i++) {
