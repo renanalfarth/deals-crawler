@@ -54,18 +54,21 @@ exports.weather = function(exp_req, exp_res) {
   }, function(err, res) {
       var result = JSON.parse(res.body);
 
-      console.log(result);
+      if(result.cod == 500) {
+        var weathers = 'error';
+      } else {
+        var weathers = [];
 
-      var weathers = [];
-
-      for(i=0;i<result.list.length;i++) {
-        weathers.push({
-          date    : result.list[i].dt_txt,
-          max     : result.list[i].main.temp_max,
-          min     : result.list[i].main.temp_min,
-          weather : result.list[i].weather[0]
-        });
+        for(i=0;i<result.list.length;i++) {
+          weathers.push({
+            date    : result.list[i].dt_txt,
+            max     : result.list[i].main.temp_max,
+            min     : result.list[i].main.temp_min,
+            weather : result.list[i].weather[0]
+          });
+        }
       }
+
 
       exp_res.json(weathers);
   });
