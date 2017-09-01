@@ -13,7 +13,7 @@ var	bodyParser 			 = require('body-parser'),
 		app 						 = express();
 
 //--- app routes
-global.craw  = require('./functions/craw');
+global.craw  = require('./functions/craw'); 
 
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
