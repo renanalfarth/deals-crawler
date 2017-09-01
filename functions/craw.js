@@ -69,3 +69,8 @@ exports.weather = function(exp_req, exp_res) {
   });
 
 };
+
+exports.info = function(exp_req, exp_res) {
+
+      exp_res.json({info:'API INFO'});
+};

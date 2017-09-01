@@ -13,7 +13,7 @@ var	bodyParser 			 = require('body-parser'),
 		app 						 = express();
 
 //--- app routes
-global.craw  = require('./functions/craw'); 
+global.craw  = require('./functions/craw');
 
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
@@ -21,6 +21,7 @@ app.use(bodyParser.raw({ limit: '50mb' }));
 
 app.options('*', cors());
 
+app.get('/', cors({origin:'*'}), craw.info);
 app.get('/hardmob', cors({origin:'*'}), craw.hardmob);
 app.get('/weather', cors({origin:'*'}), craw.weather);
 
